@@ -4,26 +4,25 @@ class Places extends Component {
   constructor() {
     super();
     this.state ={
-      searchVenues: '',
       locals: ''
     }
-    this.searchVenues = this.searchVenues.bind(this);
     this.updateLocals = this.updateLocals.bind(this);
   }
 
 
   // TODO: create a add event listener for the locations
   // TODO: create the search function
-  searchVenues() {
-    console.log('searchVenues: ' +this.state.locals)
-  }
-
   updateLocals(event) {
     this.setState({ locals: event.target.value })
-    console.log('locals: '+event.target.value)
   }
 
   render(){
+    //create a new variable for the filter locations
+    let filterVenues = this.props.venues.filter(
+      (venue) => {
+        return venue.name.indexOf(this.state.locals) >=0;
+      }
+    )
     //create the array that holds the list with the locations
     const list = this.props.venues.map((venue, i) => {
       return(
@@ -32,8 +31,8 @@ class Places extends Component {
     })
     return (
       <div>
-        <input tabIndex="0" aria-label="search by locations" placeholder="search by..." role="button" type="text" onChange={this.updateLocals}/>
-        <button className="button_search" onClick={this.searchVenues}>OK</button>
+        <input tabIndex="0" aria-label="search by locations" placeholder="search by..." role="button" type="text" onChange={this.updateLocals}
+          value={this.state.locals}/>
         <ul aria-label="list with locations">
           {list}
         </ul>
