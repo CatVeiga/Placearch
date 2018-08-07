@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Wendy+One');
+/*__== general settings ==__*/
+html,
+body{
+  box-sizing: border-box;
+}
+
+body{
+  height: 900px;
+  font-family: 'Oswald', sans-serif;
+}
+
+*,
+*::after,
+*::before{
+  box-sizing: inherit;
+}
+
+.App {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 80px auto auto;
+}
+
+ul >li {
+  list-style-type: none;
+  text-align: left;
+}
+
+input {
+  margin-top: 5px;
+  padding: 5px;
+  font-family: 'Oswald', sans-serif;
+  border: 2px solid #F34213;
+}
+
+.button_search {
+  padding: 8px;
+  margin-left: 5px;
+  border: none;
+  background-color: #3E2F5B;
+  color: #fff;
+}
+/*__== header_section ==__*/
+.header_section {
+  grid-column: 1/3;
+  grid-row: 1;
+  background: #3E2F5B;
+  border-radius: 0 10px 0 10px;
+}
+
+.header_section:first-child{
+  color: #fff;
+  font-family: 'Wendy One', sans-serif;
+  font-weight: 400;
+}
+/*__== places section ==__*/
+.places {
+  grid-column: 1/2;
+  grid-row: 2;
+  width: 100%;
+  background: #E0CA3C;
+}
+
+/*__== map section ==__*/
+.map_section {
+  grid-column: 2/3;
+  grid-row:2;
+  width: 100%;
+  height: 100%;
+  background: #F34213;
+}
+
+/*__== footer section ==__*/
+footer {
+  grid-column: 1/3;
+  grid-row: 3;
+  background: #3E2F5B;
+  border-radius: 0 10px 0 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer > p {
+  color: #fff;
+}
