@@ -19,7 +19,9 @@ To get started developing right away:
 
 `npm start`
 
-* This app can be view in the localhost: `http://localhost:3000/`
+* This app can be view in the localhost: 
+
+`http://localhost:3000/`
 
 ## What you are getting, when install this appears
 
@@ -46,13 +48,17 @@ To get started developing right away:
 
 ## Considerations
 
-This project was bootstrapped with <a href="">Create React App</a>. You can find more information on how to perform common tasks here .
-To load the Google Map, I used <a href="">react-google-maps</a>
-And to fetch the API <a href="">Foursquare</a>, I used the <a>superagent package</a>
+This project was bootstrapped with <a href="https://github.com/facebook/create-react-app">Create React App</a>. You can find more information on how to perform common tasks here .
+To load the Google Map, I used <a href="https://github.com/tomchentw/react-google-maps">react-google-maps</a>
+And to fetch the API <a href="https://developer.foursquare.com/docs">Foursquare</a>, I used the <a href="https://www.npmjs.com/package/superagent">superagent package</a>
 
 ## Important
 
-Please be aware, that I redo this project for so many times, that I exceed the request quota for this API key (Google), so if you want to see the markers you need to use your own API key.
+* Please be aware, that I redo this project for so many times, that I exceed the request quota for this API key (Google), so if you want to see the markers you need to use your own API key.
+
+* Also, please note the service worker only works in production mode. To build the app for production run:
+
+`npm run build`
 
 ## Contributing
 
@@ -60,4 +66,4 @@ This repository was created by me, from scratch. Therefore, I will accept pull r
 
 ## Authors
 
-Design the markers, and the idea, palette of colors, fonts: <a href="">Catarina Veiga</a>
+Design the markers, and the idea, palette of colors, fonts: <a href="https://github.com/cveiga819">Catarina Veiga</a>
