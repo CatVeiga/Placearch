@@ -9,9 +9,7 @@ class Places extends Component {
     this.updateLocals = this.updateLocals.bind(this);
   }
 
-
   // TODO: create a add event listener for the locations
-  // TODO: create the search function
   updateLocals(event) {
     this.setState({ locals: event.target.value })
   }
@@ -20,7 +18,7 @@ class Places extends Component {
     //create a new variable for the filter locations
     let filterVenues = this.props.venues.filter(
       (venue) => {
-        return venue.name.indexOf(this.state.locals) >=0;
+        return venue.name.toLowerCase().indexOf(this.state.locals.toLowerCase()) >=0;
       }
     )
     //create the array that holds the list with the locations
