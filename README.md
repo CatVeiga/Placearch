@@ -50,7 +50,7 @@ To get started developing right away:
 
 This project was bootstrapped with <a href="https://github.com/facebook/create-react-app">Create React App</a>. You can find more information on how to perform common tasks here .
 To load the Google Map, I used <a href="https://github.com/tomchentw/react-google-maps">react-google-maps</a>
-And to fetch the API <a href="https://developer.foursquare.com/docs">Foursquare</a>, I used the <a href="https://www.npmjs.com/package/superagent">superagent package</a>
+And to fetch the API <a href="https://developer.foursquare.com/docs">Foursquare</a>, I used the <a href="https://visionmedia.github.io/superagent/">superagent package</a>
 
 ## Important
 
