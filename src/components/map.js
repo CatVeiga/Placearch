@@ -19,7 +19,7 @@ class MapContainer extends Component {
       const icon = {
         url:'https://github.com/cveiga819/assets/blob/master/markers_1.png?raw=true'
       }
-      return <Marker key={i} icon={icon} {...marker} />
+      return <Marker key={i} icon={icon} animation={window.google.maps.Animation.DROP} {...marker} />
     });  
 
     return (
