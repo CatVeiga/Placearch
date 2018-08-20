@@ -31,6 +31,7 @@ class App extends Component {
 }
 
   render() {
+    //my choosen location to start with, all my markers, are going to shown around this location
     const location = {
       lat: 38.736946,
       lng: -9.142685
@@ -50,7 +51,8 @@ class App extends Component {
               containerElement={<div style={{ height: '100%' }}></div>}
               mapElement={<div style={{ height: '100%' }}></div>}
               center={location}
-              markers={this.state.venues}/>
+              markers={this.state.venues}
+              toggleInfoWindow={this.toggleInfoWindow}/>
         </div>
         <footer>
           <p>This was made by Catarina Veiga</p>
