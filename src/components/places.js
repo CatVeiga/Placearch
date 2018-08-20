@@ -9,7 +9,6 @@ class Places extends Component {
     this.updateLocals = this.updateLocals.bind(this);
   }
 
-  // TODO: create a add event listener for the locations
   updateLocals(event) {
     this.setState({ locals: event.target.value })
   }
@@ -24,7 +23,7 @@ class Places extends Component {
     //create the array that holds the list with the locations
     const list = this.props.venues.map((venue, i) => {
       return(
-        <li key={i} aria-label="results locations">{venue.name}</li>
+        <li key={i} aria-label="results locations" tabIndex="0" onClick={() => this.toggleInfoWindow(venue)}>{venue.name}</li>
       )
     })
     return (
