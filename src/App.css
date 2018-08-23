@@ -86,3 +86,18 @@ footer {
 footer > p {
   color: #fff;
 }
+
+/*__== InfoWindow box ==__*/
+.infobox {
+  border-radius: 0 10px 0 10px;
+  background:  #E0CA3C;
+  padding: 10px;
+  color: #000;
+  font-family: 'Oswald', sans-serif;
+}
+
+.Error_box {
+  position: absolute;
+  top: 100;
+  width: 100%;  
+}
