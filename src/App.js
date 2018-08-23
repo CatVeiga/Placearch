@@ -27,7 +27,6 @@ class App extends Component {
     const venues = response.body.response.venues;
     this.setState({ venues: venues })
   })
-
 }
 
   render() {
@@ -36,7 +35,6 @@ class App extends Component {
       lat: 38.736946,
       lng: -9.142685
     }
-
 
     return (
       <div className="App">
@@ -52,7 +50,7 @@ class App extends Component {
               mapElement={<div style={{ height: '100%' }}></div>}
               center={location}
               markers={this.state.venues}
-              toggleInfoWindow={this.toggleInfoWindow}/>
+              handleClick={this.handleClick}/>
         </div>
         <footer>
           <p>This was made by Catarina Veiga</p>
