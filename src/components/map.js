@@ -8,15 +8,24 @@ class MapContainer extends Component {
     this.state ={
       venue: [],
       hasError: false,
+      infoMarker: {},
       isOpen: false
     }
   }
 
-  //Adding the infoWindows open
-  toggleInfoWindow = venue => {
-    this.setState({ isOpen: !this.state.isOpen });
-  } 
-
+  //create the click handle for the infoWindow 
+  handleClick = venue => {
+    //create a condition to open an infowindow
+    if(venue === this.state.infoMarker) {
+      this.setState ({
+        infoMarker: venue,
+        isOpen: !this.state.isOpen
+      });
+    } else {
+      this.setState({ infoMarker: venue });
+    }
+  }
+ 
   //Catching Error with Component did Catch, tutorial followed by the React Documentation
   componentDidCatch(error, info) {
     this.setState({ hasError: true });
@@ -45,19 +54,23 @@ class MapContainer extends Component {
       const icon = {
         url:'https://github.com/cveiga819/assets/blob/master/markers_1.png?raw=true'
       }
-      return <Marker key={i} icon={icon} animation={window.google.maps.Animation.DROP} onClick={() => this.toggleInfoWindow(venue)} {...marker}>
-              {this.state.isOpen && 
-              <InfoWindow onCloseClick={() => this.toggleInfoWindow(venue)}>
-                <h5>{venue.name}</h5>
-              </InfoWindow>}
+      return <Marker key={i} icon={icon} animation={window.google.maps.Animation.DROP} onClick={() => this.handleClick(venue)} {...marker}>
+              {this.state.infoMarker.id === venue.id &&
+                (this.state.isOpen && ( 
+                  <InfoWindow onCloseClick={() => this.handleClick(venue)}>
+                  <div className="infobox">
+                    <h3>{venue.name}</h3>
+                  </div>  
+                </InfoWindow>))}
             </Marker>
     });  
 
     return (
       <GoogleMap
-        defaultZoom={13}
+        defaultZoom={12}
         defaultCenter={this.props.center}>
         {marker}
+        {this.props.children}
       </GoogleMap>
     );
   }
