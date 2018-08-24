@@ -15,15 +15,11 @@ class MapContainer extends Component {
 
   //create the click handle for the infoWindow 
   handleClick = venue => {
-    //create a condition to open an infowindow
-    if(venue === this.state.infoMarker) {
       this.setState ({
         infoMarker: venue,
         isOpen: !this.state.isOpen
       });
-    } else {
-      this.setState({ infoMarker: venue });
-    }
+    
   }
  
   //Catching Error with Component did Catch, tutorial followed by the React Documentation

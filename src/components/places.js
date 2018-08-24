@@ -21,9 +21,9 @@ class Places extends Component {
       }
     )
     //create the array that holds the list with the locations
-    const list = this.props.venues.map((venue, i) => {
+    const list = this.props.venues.map((venue, i, handleClick) => {
       return(
-        <li key={i} aria-label="results locations" tabIndex="0" onClick={() => this.toggleInfoWindow(venue)}>{venue.name}</li>
+        <li key={i} aria-label="results locations" tabIndex="0" onClick={() => this.handleClick(venue)}>{venue.name}</li>
       )
     })
     return (

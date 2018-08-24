@@ -42,7 +42,8 @@ class App extends Component {
           <h1>Placearch</h1>
         </header>
         <div className="places">
-          <Places venues={this.state.venues} />
+          <Places venues={this.state.venues}
+                  handleClick={this.handleClick} />
         </div>
         <div className="map_section">
           <MapContainer
