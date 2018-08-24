@@ -6,7 +6,7 @@ This was the last project built for the Udacity Front-End Nanodegree. The object
 
 You can click on this emoji to see the live demo of this project
 
-<a href=""><img src="https://emojis.slackmojis.com/emojis/images/1465929657/511/heroku.png?1465929657" style="height: 25px"></a>
+<a href=""><img src="https://emojis.slackmojis.com/emojis/images/1465929657/511/heroku.png?1465929657" style="height: 5px"></a>
 
 ## Instructions
 To get started developing right away:
@@ -58,9 +58,7 @@ To load the Google Map, I used <a href="https://github.com/tomchentw/react-googl
 And to fetch the API <a href="https://developer.foursquare.com/docs">Foursquare</a>, I used the <a href="https://visionmedia.github.io/superagent/">superagent package</a>
 
 ## ScreenShots
-*Please, when you open the app, and since I changed the markers pre-defined by Google, you need to click a little bit down in the marker, like showing in this image, however, if you zoom the map, you are able to click in the marker, like "normal".*
 
-![alt text](assets/screenshot1.png)
 
 *When you open the app this is the view you are going to have: one side you will have a list with all locations choosen, and in the other side you will have the map*
 
