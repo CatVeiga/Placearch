@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald|Wendy+One');
 /*__== general settings ==__*/
+
 html,
 body{
   box-sizing: border-box;
 }
 
 body{
-  height: 900px;
+  height: 100%;
   font-family: 'Oswald', sans-serif;
 }
 
@@ -19,34 +20,34 @@ body{
 .App {
   text-align: center;
   display: grid;
-  grid-template-columns: 40% 60%;
-  grid-template-rows: 80px auto auto;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 80px auto 53px;
 }
 
 ul >li {
   list-style-type: none;
   text-align: left;
+  cursor: pointer;
+}
+
+li:active {
+  background: #325;
+  color: #fff;
+  border-radius: 5px;
 }
 
 input {
   margin-top: 5px;
   padding: 5px;
   font-family: 'Oswald', sans-serif;
-  border: 2px solid #F34213;
+  border: 2px solid #f41;
 }
 
-.button_search {
-  padding: 8px;
-  margin-left: 5px;
-  border: none;
-  background-color: #3E2F5B;
-  color: #fff;
-}
 /*__== header_section ==__*/
 .header_section {
   grid-column: 1/3;
   grid-row: 1;
-  background: #3E2F5B;
+  background: #325;
   border-radius: 0 10px 0 10px;
 }
 
@@ -55,31 +56,33 @@ input {
   font-family: 'Wendy One', sans-serif;
   font-weight: 400;
 }
+
 /*__== places section ==__*/
 .places {
   grid-column: 1/2;
   grid-row: 2;
   width: 100%;
-  background: #E0CA3C;
+  padding: 10px;
+  font-size: 16px;
+  overflow-y: hidden;
+  background: #ec3;
 }
 
 /*__== map section ==__*/
 .map_section {
   grid-column: 2/3;
-  grid-row:2;
+  grid-row: 2;
   width: 100%;
   height: 100%;
-  background: #F34213;
+  background: #f41;
 }
 
 /*__== footer section ==__*/
 footer {
   grid-column: 1/3;
   grid-row: 3;
-  background: #3E2F5B;
+  background: #325;
   border-radius: 0 10px 0 10px;
-  position: fixed;
-  bottom: 0;
   width: 100%;
 }
 
@@ -90,7 +93,7 @@ footer > p {
 /*__== InfoWindow box ==__*/
 .infobox {
   border-radius: 0 10px 0 10px;
-  background:  #E0CA3C;
+  background:  #ec3;
   padding: 10px;
   color: #000;
   font-family: 'Oswald', sans-serif;
@@ -99,5 +102,45 @@ footer > p {
 .Error_box {
   position: absolute;
   top: 100;
-  width: 100%;  
+  width: 100%;
+  background: #fff;
+  border: 2px solid #ec3;
+  font-size: 16px;  
+}
+
+/*__== Media Queries ==__*/
+
+@media screen and (max-width: 425px) {
+  .App{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 80px 250px 750px auto; 
+  }
+
+  .places {
+    grid-column: 1/3;
+    grid-row: 2;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    overflow-y: scroll;
+    background: #ec3;
+  }
+
+  .map_section{
+    grid-column: 1/3;
+    grid-row: 3;
+    width: 100%;
+    height: 100%;
+    background: #f41;
+  }
+
+  footer {
+    grid-column: 1/3;
+    grid-row: 4;
+    background: #325;
+    border-radius: 0 10px 0 10px;
+    width: 100%;
+  }
 }
