@@ -1,32 +1,20 @@
 import React, { Component } from 'react';
-import { withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps";
+import { withGoogleMap, GoogleMap } from 'react-google-maps';
 
 class MapContainer extends Component {
   //constructor
-  constructor(props) {
+  constructor(props){
     super(props);
-    this.state ={
-      venue: [],
-      hasError: false,
-      infoMarker: {},
-      isOpen: false
+    this.state={
+      hasError: false
     }
   }
 
-  //create the click handle for the infoWindow 
-  handleClick = venue => {
-      this.setState ({
-        infoMarker: venue,
-        isOpen: !this.state.isOpen
-      });
-    
-  }
- 
   //Catching Error with Component did Catch, tutorial followed by the React Documentation
   componentDidCatch(error, info) {
     this.setState({ hasError: true });
   }
-  
+
   render() {
     //error handling
     if(this.state.hasError) {
@@ -37,38 +25,13 @@ class MapContainer extends Component {
         </div>
       )
     }
-    //create the array with markers
-    const marker = this.props.markers.map((venue, i) => {
-      // set the location similar to the foursquare points
-      const marker = {
-        position: {
-          lat: venue.location.lat,
-          lng: venue.location.lng
-        }
-      }
-      //set the icon for the markers
-      const icon = {
-        url:'https://github.com/cveiga819/assets/blob/master/markers_1.png?raw=true'
-      }
-      return <Marker key={i} icon={icon} animation={window.google.maps.Animation.DROP} onClick={() => this.handleClick(venue)} {...marker}>
-              {this.state.infoMarker.id === venue.id &&
-                (this.state.isOpen && ( 
-                  <InfoWindow onCloseClick={() => this.handleClick(venue)}>
-                  <div className="infobox">
-                    <h3>{venue.name}</h3>
-                  </div>  
-                </InfoWindow>))}
-            </Marker>
-    });  
-
-    return (
+    return(
       <GoogleMap
-        defaultZoom={12}
-        defaultCenter={this.props.center}>
-        {marker}
-        {this.props.children}
-      </GoogleMap>
-    );
+       defaultZoom={12}
+       defaultCenter={{lat: 38.736946, lng: -9.142685}}>
+       {this.props.children}
+     </GoogleMap>
+   );
   }
 }
 export default withGoogleMap(MapContainer);
