@@ -6,7 +6,9 @@ This was the last project built for the Udacity Front-End Nanodegree. The object
 
 You can click on this emoji to see the live demo of this project
 
-<a href=""><img src="https://emojis.slackmojis.com/emojis/images/1465929657/511/heroku.png?1465929657" style="height: 5px"></a>
+<a href="https://placearch.herokuapp.com/"><img src="https://emojis.slackmojis.com/emojis/images/1465929657/511/heroku.png?1465929657" style="height: 5px; width:5px"></a>
+
+Also, if you want to know, how my brainstorm was start, you can visit the <a href="https://trello.com/b/mh8w6RuX/neighborhood-react-app">Trello-Neighborhood React App</a>, although the most part are in portuguese.
 
 ## Instructions
 To get started developing right away:
