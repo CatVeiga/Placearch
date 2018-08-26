@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class Places extends Component {
+  //constructor
   constructor() {
     super();
     this.state ={
@@ -9,21 +10,25 @@ class Places extends Component {
     this.updateLocals = this.updateLocals.bind(this);
   }
 
-  updateLocals(event) {
-    this.setState({ locals: event.target.value })
+  //create a function for update locals
+  updateLocals(event){
+    this.setState({
+      locals: event.target.value
+    });
   }
 
+
   render(){
-    //create a new variable for the filter locations
+    //create a new variable to assign the filter for search the list locations
     let filterVenues = this.props.venues.filter(
       (venue) => {
-        return venue.name.toLowerCase().indexOf(this.state.locals.toLowerCase()) >=0;
+        return venue.name.toLowerCase().indexOf(this.state.locals) >= 0;
       }
-    )
+    );
     //create the array that holds the list with the locations
-    const list = this.props.venues.map((venue, i, handleClick) => {
+    const list = filterVenues.map((venue, i, handleClick) => {
       return(
-        <li key={i} aria-label="results locations" tabIndex="0" onClick={() => this.handleClick(venue)}>{venue.name}</li>
+        <li key={i} aria-label="results locations" tabIndex="0" onClick={() => this.props.handleClick(venue)}>{venue.name}</li>
       )
     })
     return (
@@ -38,3 +43,4 @@ class Places extends Component {
   }
 }
 export default Places;
+
