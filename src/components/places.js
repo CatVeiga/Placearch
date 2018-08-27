@@ -28,7 +28,7 @@ class Places extends Component {
     //create the array that holds the list with the locations
     const list = filterVenues.map((venue, i, handleClick) => {
       return(
-        <li key={i} aria-label="results locations" tabIndex="0" onClick={() => this.props.handleClick(venue)}>{venue.name}</li>
+        <li key={i} aria-label="results locations" role="list" tabIndex="0" onClick={() => this.props.handleClick(venue)}>{venue.name}</li>
       )
     })
     return (
