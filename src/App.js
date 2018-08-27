@@ -23,7 +23,6 @@ class App extends Component {
   //component that will mounted with the fetch URL from the Foursquare API
   componentDidMount(){
     const URL = 'https://api.foursquare.com/v2/venues/search?ll=38.736946,-9.142685&categoryId=4bf58dd8d48988d181941735&client_id=TABJ4BUFKAHJALLDGB40C5DSUV5415NTGZTX03SKREKFV1CH&client_secret=YRWIN2J2FLL5TO0WDSHQJFXYSS5OWPWDNXACJA4O5ZU1OR34&v=20180816';
-
     //fetch the data through the superagent
     superagent
     .get(URL)
@@ -45,15 +44,14 @@ class App extends Component {
 
   // function that allowed the list of locations clickable issue #8
   markersShown = () => {
-
     //copy a value to target an object, for use Object.Assign (tutorial from MDN web docs)
     const venues = Object.assign({}, this.state.venues);
     let locationList = [];
-    //maping and pushing the markers in the map 
+      //maping and pushing the markers in the map 
       if(!!venues) {
         Object.values(venues).map((venue, i) => {
-        //return the locationlist array and push to present the markers and info windows
-        return locationList.push(
+          //return the locationlist array and push to present the markers and info windows
+          return locationList.push(
           //show the marker and info window "inside" the marker
           <Marker key={i} icon={'https://github.com/cveiga819/assets/blob/master/markers_1.png?raw=true'} position={{lat: venue.location.lat, lng: venue.location.lng}} animation={window.google.maps.Animation.DROP} onClick={() => this.handleClick(venue)}>
             {this.state.infoMarker.id === venue.id &&
