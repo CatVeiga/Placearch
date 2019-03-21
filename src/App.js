@@ -53,7 +53,7 @@ class App extends Component {
           //return the locationlist array and push to present the markers and info windows
           return locationList.push(
           //show the marker and info window "inside" the marker
-          <Marker key={i} icon={'https://github.com/cveiga819/assets/blob/master/markers_1.png?raw=true'} position={{lat: venue.location.lat, lng: venue.location.lng}} animation={window.google.maps.Animation.DROP} onClick={() => this.handleClick(venue)}>
+          <Marker key={i} icon={'https://github.com/cveiga819/assets/blob/master/images/markers_1.png?raw=true'} position={{lat: venue.location.lat, lng: venue.location.lng}} animation={window.google.maps.Animation.DROP} onClick={() => this.handleClick(venue)}>
             {this.state.infoMarker.id === venue.id &&
               (this.state.isOpen && (
                 <InfoWindow onCloseClick={() => this.handleClick(venue)}>
